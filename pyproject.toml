@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "karpo-accelerate"
+version = "0.1.0"
+description = "Dynamic batching, Ampere kernels, and calibrated early exits for Karpo Decision"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+keywords = ["karpo", "decision-models", "inference", "cuda", "batching"]
+
+[project.optional-dependencies]
+cuda = [
+    "karpo-decision @ git+https://github.com/machinepulse-ai/karpo-decision.git@6600011eb5cf46232d056ec0717dc726146d29de",
+    "transformers==5.17.0",
+    "ninja>=1.11",
+]
+
+[project.scripts]
+karpo-accelerate = "karpo_accel.cli:main"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/karpo_accel"]
+
+[tool.hatch.build.targets.sdist]
+include = ["/src", "/tests", "/examples", "/docs", "/README.md", "/LICENSE", "/NOTICE", "/pyproject.toml"]
+
+[tool.ruff]
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "SIM"]

@@ -1,0 +1,12 @@
+Karpo Accelerate is an independent extension for MachinePulse AI's Karpo Decision.
+
+Karpo Decision source API used by this project
+https://github.com/machinepulse-ai/karpo-decision
+Revision 6600011eb5cf46232d056ec0717dc726146d29de (Apache-2.0)
+
+The compiler uses NVIDIA CUTLASS 4.2.1 (BSD-3-Clause) and vLLM 0.19.1
+scaled matrix multiplication headers (Apache-2.0) from their upstream
+repositories. Their sources and binaries are obtained separately.
+
+The Karpo model checkpoint and associated terms are provided by MachinePulse AI.
+https://huggingface.co/MachinePulseAI/karpo-decision-31B

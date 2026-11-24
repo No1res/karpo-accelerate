@@ -1,0 +1,13 @@
+{
+  "state": "My invoice has a duplicate charge.",
+  "questions": {
+    "decision": {
+      "type": "choice",
+      "instructions": "Route the message to the right team.",
+      "criteria": {
+        "billing": "Invoices and payments",
+        "support": "Technical problems"
+      }
+    }
+  }
+}
